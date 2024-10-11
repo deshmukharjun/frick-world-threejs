@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>My First Three.js App</title>
+    <title>My first three.js app</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { overflow: hidden; } /* Prevent scrolling */
-        canvas { display: block; } /* Ensures canvas takes full space */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { overflow: hidden; } /* Prevent scrollbars */
     </style>
-</head>
-<body>
-
-    <!-- The Three.js canvas will be created and inserted here by JavaScript -->
-
+  </head>
+  <body>
     <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js",
-                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/"
-            }
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
         }
+      }
     </script>
-    <script type="module" src="main.js"></script> <!-- Make sure the path is correct -->
-
-</body>
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
