@@ -7,14 +7,14 @@ scene.background = new THREE.Color('#000000');  // Dark background
 
 // Set up the camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(4,0,0);  // Initial camera position
+camera.position.set(5, 2, 5);  // Initial camera position
 
 // Load the moon texture
 const textureLoader = new THREE.TextureLoader();
 const moonTexture = textureLoader.load('assets/moon.jpg');  // Replace with your actual texture path
 
 // Create the geometry and material for the sphere with the moon texture
-const geometry = new THREE.SphereGeometry(2, 64, 64); // Sphere with radius 2 and high segments for smoothness
+const geometry = new THREE.SphereGeometry(2, 32, 32); // Sphere with radius 2 and high segments for smoothness
 const material = new THREE.MeshPhongMaterial({
   map: moonTexture,  // Apply the moon texture
   shininess: 50,    // Keep some shininess to enhance material appearance
@@ -60,8 +60,8 @@ createStars(); // Call the function to create stars
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;  // Enable damping (inertia)
 controls.dampingFactor = 0.05;  // Damping factor for smoother movement
-controls.maxDistance = 150;  // Max zoom-out distance
-controls.minDistance = 3;   // Min zoom-in distance
+controls.maxDistance = 15;  // Max zoom-out distance
+controls.minDistance = 4;   // Min zoom-in distance
 
 // Animation loop
 function animate() {
