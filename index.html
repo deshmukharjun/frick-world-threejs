@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frick World - My Three.js App</title>
+  <title>Frick World - Responsive Three.js App</title>
   
   <!-- Importing Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -12,13 +12,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       overflow: hidden; 
-      font-family: 'Poppins', sans-serif; /* Default font for the rest */
-      color: #FFFFFF; /* White text color */
+      font-family: 'Poppins', sans-serif;
+      color: #FFFFFF;
     }
-    body:active { 
-      cursor: grabbing; /* Cursor when the body is dragged */
+    canvas { 
+      display: block;
+      width: 100%;  
+      height: 100%; 
     }
-    canvas { display: block; }
 
     /* Title Styling */
     #title {
@@ -26,8 +27,8 @@
       top: 80px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 6rem; /* Increased font size for Frick World */
-      font-family: 'Beau Rivage', cursive; /* Beau Rivage font for Frick World */
+      font-size: 6rem;
+      font-family: 'Beau Rivage', cursive;
       text-align: center;
     }
 
@@ -35,8 +36,8 @@
     #logo {
       position: absolute;
       top: 20px;
-      left: 20px; /* Moved to the left */
-      width: 100px; /* Adjust size as needed */
+      left: 20px;
+      width: 100px;
     }
 
     /* Hamburger Menu */
@@ -51,7 +52,7 @@
     }
 
     .menu-button img {
-      width: 30px; /* Adjust the size as needed */
+      width: 30px;
     }
 
     /* Sidebar navigation */
@@ -65,7 +66,6 @@
       background-color: rgba(0, 0, 0, 0.9);
       overflow-x: hidden;
       transition: 0.5s;
-      align-items: center;
       padding-top: 100px;
     }
 
@@ -73,7 +73,7 @@
       padding: 8px 8px 8px 128px;
       text-decoration: none;
       font-size: 6rem;
-      font-family: 'Beau Rivage', cursive; /* Beau Rivage for nav items */
+      font-family: 'Beau Rivage', cursive;
       color: darkgray;
       display: block;
       transition: 0.3s;
@@ -93,7 +93,7 @@
     }
 
     #drag-icon {
-      width: 30px; /* Adjust icon size */
+      width: 30px;
     }
 
     #drag-text {
@@ -104,30 +104,26 @@
     /* Media query for smaller screens */
     @media (max-width: 768px) {
       #title {
-        font-size: 36px; /* Adjusted font size for smaller screens */
+        font-size: 36px;
         top: 10px;
       }
 
-      .menu-button {
-        right: 20px;
-      }
-
       #logo {
-        width: 80px; /* Adjust logo size for smaller screens */
+        width: 80px;
       }
 
       #drag-icon {
-        width: 40px; /* Adjust drag icon size for smaller screens */
+        width: 40px;
       }
 
       #drag-text {
-        font-size: 1.2rem; /* Adjust text size for smaller screens */
+        font-size: 1.2rem;
       }
     }
 
     @media (max-width: 480px) {
       #title {
-        font-size: 28px; /* Further adjusted for very small screens */
+        font-size: 28px;
         top: 5px;
       }
 
@@ -187,10 +183,10 @@
 
       if (nav.style.width === "40%") {
         nav.style.width = "0%";
-        menuIcon.src = "assets/hamburger.svg"; // Change back to hamburger icon
+        menuIcon.src = "assets/hamburger.svg";
       } else {
         nav.style.width = "40%";
-        menuIcon.src = "assets/hamburger_cross.svg"; // Change to cross icon
+        menuIcon.src = "assets/hamburger_cross.svg";
       }
     }
   </script>
