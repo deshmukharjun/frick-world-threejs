@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Frick World - My Three.js App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { 
-        overflow: hidden; 
-        font-family: 'Montserrat', sans-serif; /* Montserrat font */
-        color: #FFFFFF; /* White text color */
-      }
-      canvas { display: block; }
+<head>
+  <meta charset="utf-8">
+  <title>Frick World - My Three.js App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      overflow: hidden; 
+      font-family: 'Montserrat', sans-serif; /* Montserrat font */
+      color: #FFFFFF; /* White text color */
+    }
+    body:active { 
+      cursor: grabbing; /* Cursor when the body is dragged */
+    }
+    canvas { display: block; }
+    #title {
+      position: absolute;
+      top: 20px; /* Positioning the text */
+      left: 50%;
+      transform: translateX(-50%); /* Center the text horizontally */
+      font-size: 36px; /* Font size */
+      text-align: center; /* Center the text */
+    }
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
       #title {
-        position: absolute;
-        top: 20px; /* Positioning the text */
-        left: 50%;
-        transform: translateX(-50%); /* Center the text horizontally */
-        font-size: 36px; /* Font size */
-        text-align: center; /* Center the text */
+        font-size: 24px; /* Smaller font size for mobile devices */
+        top: 10px; /* Adjusted positioning for mobile */
       }
-    </style>
-  </head>
-  <body>
-    <div id="title">Frick World</div>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
-        }
+    }
+    @media (max-width: 480px) {
+      #title {
+        font-size: 18px; /* Even smaller font size for very small screens */
+        top: 5px; /* Adjusted positioning for small screens */
       }
-    </script>
-    <script type="module" src="/main.js"></script>
-  </body>
+    }
+  </style>
+</head>
+<body>
+  <div id="title">Frick World</div>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="/main.js"></script>
+</body>
 </html>
