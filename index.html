@@ -2,44 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frick World - My Three.js App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Importing Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
       overflow: hidden; 
-      font-family: 'Montserrat', sans-serif; /* Montserrat font */
+      font-family: 'Poppins', sans-serif; /* Default font for the rest */
       color: #FFFFFF; /* White text color */
     }
     body:active { 
       cursor: grabbing; /* Cursor when the body is dragged */
     }
     canvas { display: block; }
+
+    /* Title Styling */
     #title {
       position: absolute;
-      top: 20px; /* Positioning the text */
+      top: 80px;
       left: 50%;
-      transform: translateX(-50%); /* Center the text horizontally */
-      font-size: 36px; /* Font size */
-      text-align: center; /* Center the text */
+      transform: translateX(-50%);
+      font-size: 6rem; /* Increased font size for Frick World */
+      font-family: 'Beau Rivage', cursive; /* Beau Rivage font for Frick World */
+      text-align: center;
     }
+
+    /* Logo Styling */
+    #logo {
+      position: absolute;
+      top: 20px;
+      left: 20px; /* Moved to the left */
+      width: 100px; /* Adjust size as needed */
+    }
+
+    /* Hamburger Menu */
+    .menu-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .menu-button img {
+      width: 30px; /* Adjust the size as needed */
+    }
+
+    /* Sidebar navigation */
+    .nav {
+      height: 100%;
+      width: 0%;
+      position: fixed;
+      z-index: 9;
+      top: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    .nav a {
+      padding: 8px 8px 8px 128px;
+      text-decoration: none;
+      font-size: 6rem;
+      font-family: 'Beau Rivage', cursive; /* Beau Rivage for nav items */
+      color: darkgray;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .nav a:hover {
+      color: white;
+    }
+
+    /* Drag icon and text */
+    #drag-container {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    #drag-icon {
+      width: 30px; /* Adjust icon size */
+    }
+
+    #drag-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+    }
+
     /* Media query for smaller screens */
     @media (max-width: 768px) {
       #title {
-        font-size: 24px; /* Smaller font size for mobile devices */
-        top: 10px; /* Adjusted positioning for mobile */
+        font-size: 36px; /* Adjusted font size for smaller screens */
+        top: 10px;
+      }
+
+      .menu-button {
+        right: 20px;
+      }
+
+      #logo {
+        width: 80px; /* Adjust logo size for smaller screens */
+      }
+
+      #drag-icon {
+        width: 40px; /* Adjust drag icon size for smaller screens */
+      }
+
+      #drag-text {
+        font-size: 1.2rem; /* Adjust text size for smaller screens */
       }
     }
+
     @media (max-width: 480px) {
       #title {
-        font-size: 18px; /* Even smaller font size for very small screens */
-        top: 5px; /* Adjusted positioning for small screens */
+        font-size: 28px; /* Further adjusted for very small screens */
+        top: 5px;
+      }
+
+      #drag-icon {
+        width: 30px;
+      }
+
+      #drag-text {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Title at the center -->
   <div id="title">Frick World</div>
+
+  <!-- Logo on the left -->
+  <img id="logo" src="assets/logo.svg" alt="Frick World Logo">
+
+  <!-- Menu button (hamburger icon) -->
+  <button class="menu-button" onclick="toggleNav()">
+    <img id="menu-icon" src="assets/hamburger.svg" alt="Menu">
+  </button>
+
+  <!-- Right sidebar navigation -->
+  <div id="myNav" class="nav">
+    <a href="#">Work</a>
+    <a href="#">Projects</a>
+    <a href="#">Services</a>
+    <a href="#">About Us</a>
+    <a href="#">Frick World</a>
+  </div>
+
+  <!-- Drag icon and text at the bottom -->
+  <div id="drag-container">
+    <img id="drag-icon" src="assets/drag.svg" alt="Drag Icon">
+    <div id="drag-text">Drag to explore Frick World</div>
+  </div>
+
   <script type="importmap">
     {
       "imports": {
@@ -49,5 +178,22 @@
     }
   </script>
   <script type="module" src="/main.js"></script>
+
+  <script>
+    // JavaScript to toggle between hamburger and cross icon
+    function toggleNav() {
+      const nav = document.getElementById("myNav");
+      const menuIcon = document.getElementById("menu-icon");
+
+      if (nav.style.width === "40%") {
+        nav.style.width = "0%";
+        menuIcon.src = "assets/hamburger.svg"; // Change back to hamburger icon
+      } else {
+        nav.style.width = "40%";
+        menuIcon.src = "assets/hamburger_cross.svg"; // Change to cross icon
+      }
+    }
+  </script>
+
 </body>
 </html>
