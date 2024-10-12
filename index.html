@@ -2,13 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My first three.js app</title>
+    <title>Frick World - My Three.js App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { overflow: hidden; } /* Prevent scrollbars */
+      body { 
+        overflow: hidden; 
+        font-family: 'Montserrat', sans-serif; /* Montserrat font */
+        color: #FFFFFF; /* White text color */
+      }
+      canvas { display: block; }
+      #title {
+        position: absolute;
+        top: 20px; /* Positioning the text */
+        left: 50%;
+        transform: translateX(-50%); /* Center the text horizontally */
+        font-size: 36px; /* Font size */
+        text-align: center; /* Center the text */
+      }
     </style>
   </head>
   <body>
+    <div id="title">Frick World</div>
     <script type="importmap">
       {
         "imports": {
