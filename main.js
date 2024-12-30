@@ -93,9 +93,9 @@ const sphereRadius = 3.3;
 const rows = 15;
 const columns = 30;
 let imagePaths = [
-  'assets/images1.jpg', 'assets/images2.jpg', 'assets/images3.jpg', 
-  'assets/images4.jpg', 'assets/images5.jpg', 'assets/images6.jpg', 
-  'assets/images7.jpg', 'assets/images8.jpg', 'assets/images9.jpg', 
+  'assets/images1.jpg', 'assets/images2.jpg', 'assets/images3.jpg',
+  'assets/images4.jpg', 'assets/images5.jpg', 'assets/images6.jpg',
+  'assets/images7.jpg', 'assets/images8.jpg', 'assets/images9.jpg',
   'assets/images10.jpg', 'assets/images11.jpg'
 ];
 
